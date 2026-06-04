@@ -1,0 +1,235 @@
+/* ============================================================
+   GURU CSS
+   ============================================================ */
+:root {
+    --primary: #4F46E5;
+    --primary-hover: #4338CA;
+    --primary-light: #EEF2FF;
+    --bg-body: #F8FAFC;
+    --bg-sidebar: #0F172A;
+    --bg-card: #FFFFFF;
+    --text-main: #0F172A;
+    --text-body: #334155;
+    --text-muted: #64748B;
+    --border-color: #E2E8F0;
+    --danger: #EF4444;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+body { 
+    background: url('../images/background2.png') no-repeat center center fixed; 
+    background-size: cover;
+    background-color: var(--bg);
+    display: flex; 
+    color: var(--text-body); 
+    min-height: 100vh; 
+}
+
+
+.sidebar-header {
+    padding: 30px 24px; 
+    font-size: 24px; 
+    font-weight: 800; 
+    color: white;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    
+    /* Tambahan agar logo dan text berbaris rapi kesamping */
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Jarak antara logo dan teks */
+}
+
+/* Mengatur ukuran logo di dalam sidebar */
+.sidebar-header img {
+    height: 32px; /* Ukuran tinggi logo agar presisi */
+    width: auto;
+    object-fit: contain;
+}
+/* SIDEBAR */
+.sidebar {
+    width: 280px; background-color: var(--bg-sidebar); color: white;
+    height: 100vh; position: fixed; display: flex; flex-direction: column; z-index: 100;
+}
+.sidebar-header {
+    padding: 30px 24px; font-size: 24px; font-weight: 800; color: white;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.sidebar-header span { color: var(--primary); }
+.menu-section { padding: 20px 0; flex-grow: 1; }
+.menu-label {
+    padding: 10px 24px; font-size: 11px; font-weight: 700; color: #475569;
+    text-transform: uppercase; letter-spacing: 1px;
+}
+.menu-item {
+    padding: 14px 24px; color: #CBD5E1; text-decoration: none; font-size: 15px;
+    font-weight: 500; display: flex; align-items: center; gap: 12px; transition: 0.3s;
+}
+.menu-item:hover { background: rgba(255,255,255,0.05); color: white; }
+.menu-item.active { background-color: rgba(79,70,229,0.1); color: white; border-left: 4px solid var(--primary); }
+.logout-btn {
+    padding: 20px 24px; color: #FB7185; text-decoration: none; font-weight: 600;
+    border-top: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; gap: 10px;
+}
+
+/* CONTENT & CARDS */
+.content { margin-left: 280px; padding: 40px; width: calc(100% - 280px); }
+
+.profile-widget, .profil-widget {
+    background: white; padding: 25px; border-radius: 20px;
+    display: flex; justify-content: space-between; align-items: center;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); border: 1px solid var(--border-color);
+    margin-bottom: 30px;
+}
+.user-info { display: flex; align-items: center; gap: 20px; }
+.user-info img { width: 65px; height: 65px; border-radius: 50%; object-fit: cover; border: 3px solid var(--primary-light); }
+.user-info h2 { font-size: 20px; font-weight: 800; color: var(--text-main); }
+.user-info p { font-size: 13px; color: var(--text-muted); font-weight: 600; }
+
+.card {
+    background: var(--bg-card); padding: 30px; border-radius: 20px;
+    border: 1px solid var(--border-color); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.04);
+}
+.card h3 { font-size: 18px; font-weight: 700; color: var(--text-main); margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+
+/* TABLE */
+.table-container { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; }
+th { text-align: left; padding: 12px 15px; background: #F1F5F9; color: var(--text-muted); font-size: 12px; font-weight: 700; text-transform: uppercase; }
+td { padding: 15px; border-bottom: 1px solid #F1F5F9; font-size: 14px; color: var(--text-body); }
+tr:hover { background-color: #F8FAFC; }
+.day-badge { font-weight: 700; color: var(--primary); }
+.time-text { font-weight: 600; color: var(--text-main); }
+.subject-badge { background: var(--primary-light); color: var(--primary); padding: 5px 12px; border-radius: 8px; font-weight: 600; font-size: 12px; }
+.class-badge { background: #F1F5F9; color: #475569; padding: 4px 10px; border-radius: 6px; font-weight: 700; font-size: 13px; }
+
+/* BUTTONS */
+.btn-outline {
+    text-decoration: none; font-size: 13px; font-weight: 700; color: var(--primary); 
+    background: var(--primary-light); padding: 10px 18px; border-radius: 10px; transition: 0.3s;
+}
+.btn-outline:hover { background: var(--primary); color: white; }
+
+/* FORMS (PROFIL) */
+.preview-wrapper { display: flex; align-items: center; gap: 20px; margin-bottom: 30px; }
+.preview-wrapper img { width: 90px; height: 90px; border-radius: 50%; object-fit: cover; border: 4px solid var(--primary-light); }
+.change-photo-btn {
+    color: var(--primary); font-weight: 700; cursor: pointer; font-size: 13px;
+    background: var(--primary-light); padding: 8px 16px; border-radius: 10px; transition: 0.3s; display: inline-block;
+}
+.change-photo-btn:hover { background: var(--primary); color: white; }
+
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
+.form-group label { display: block; margin-bottom: 10px; font-weight: 700; font-size: 11px; color: var(--text-muted); text-transform: uppercase; }
+.form-group input { width: 100%; padding: 14px 18px; border: 1px solid var(--border-color); border-radius: 12px; font-size: 14px; outline: none; background: #F8FAFC; transition: 0.3s; }
+.form-group input:focus { border-color: var(--primary); background: white; box-shadow: 0 0 0 4px rgba(79,70,229,0.1); }
+.form-group input:disabled { cursor: not-allowed; opacity: 0.7; }
+
+.btn-save {
+    margin-top: 30px; background: var(--primary); color: white; border: none;
+    padding: 16px 32px; border-radius: 14px; font-weight: 800; cursor: pointer;
+    transition: 0.3s; display: inline-flex; align-items: center; gap: 10px;
+}
+.btn-save:hover { background: var(--primary-hover); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(79,70,229,0.3); }
+
+/* ALERTS */
+.alert-success-profil { background: #DCFCE7; color: #166534; padding: 15px; border-radius: 12px; text-align: center; margin-bottom: 25px; font-weight: 600; border: 1px solid #BBF7D0; }
+.alert-error-profil { background: #FEE2E2; color: #991B1B; padding: 15px; border-radius: 12px; text-align: center; margin-bottom: 25px; font-weight: 600; border: 1px solid #FECACA; }
+
+
+
+
+/* Width Kolom Tabel Murid (Tanpa Aksi) */
+#tabelSiswa { table-layout: fixed; width: 100%; }
+.th-absen { width: 150px; text-align: center; }
+.th-nama { width: auto; text-align: left; }
+.th-kelas { width: 220px; text-align: center; }
+#tabelSiswa td.text-center { text-align: center; }
+
+.nama-siswa-bold { font-weight: 600; color: var(--text-main); }
+.badge-kelas-table { background: var(--primary-light); color: var(--primary); padding: 5px 12px; border-radius: 8px; font-size: 12px; font-weight: 700; }
+
+/* Filter Dropdown Styling */
+.search-input { padding: 10px 15px; border: 1px solid var(--border-color); border-radius: 8px; font-size: 14px; color: var(--text-main); outline: none; transition: 0.3s; background-color: #FFFFFF; }
+.search-input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1); }
+.select-filter { cursor: pointer; width: 220px; }
+
+/* Pagination Styling */
+.pagination-container { display: flex; justify-content: center; align-items: center; padding: 20px; gap: 8px; background: #FFF; border-top: 1px solid var(--border-color); }
+.page-btn { padding: 8px 14px; border: 1px solid var(--border-color); background-color: white; color: var(--text-body); border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 13px; transition: 0.2s; outline: none; }
+.page-btn:hover { background-color: var(--primary-light); color: var(--primary); border-color: var(--primary-light); }
+.page-btn.active { background-color: var(--primary); color: white; border-color: var(--primary); box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.3); }
+
+
+
+
+.profil-widget-admin {
+    background: white; padding: 25px; border-radius: 20px;
+    display: flex; justify-content: space-between; align-items: center;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); border: 1px solid var(--border-color);
+    margin-bottom: 30px;
+}
+.profil-header-info p.subtitle { font-size: 12px; color: var(--text-muted); font-weight: 600; margin: 0; text-transform: uppercase; letter-spacing: 1px; }
+.profil-header-info h2 { font-size: 24px; font-weight: 800; color: var(--text-main); margin: 5px 0 0 0; }
+.profil-header-info p.status { font-size: 13px; color: var(--primary); font-weight: 500; margin-top: 4px; }
+
+.profil-user-top { display: flex; align-items: center; gap: 20px; }
+.profil-user-top img { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; border: 3px solid var(--primary-light); }
+
+.profil-card {
+    background: var(--bg-card); padding: 40px; border-radius: 20px;
+    border: 1px solid var(--border-color); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.04);
+}
+
+.profil-section-title { border-bottom: 1px solid var(--border-color); margin-bottom: 35px; padding-bottom: 15px; text-align: left; }
+.profil-section-title h3 { margin: 0; font-size: 20px; font-weight: 800; color: var(--text-main); }
+.profil-section-title p { color: var(--text-muted); font-size: 13px; margin-top: 5px; }
+
+/* Kebutuhan Badge Foto Kamera Melayang */
+.foto-relative { position: relative; }
+.foto-badge { 
+    position: absolute; bottom: 0; right: 0; background: var(--primary); color: white; 
+    width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; 
+    justify-content: center; cursor: pointer; border: 3px solid white; box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+}
+
+.preview-wrapper { display: flex; align-items: center; gap: 20px; margin-bottom: 30px; }
+.preview-wrapper img { width: 90px; height: 90px; border-radius: 50%; object-fit: cover; border: 4px solid var(--primary-light); }
+
+.change-photo-btn {
+    color: var(--primary); font-weight: 700; cursor: pointer; font-size: 13px;
+    background: var(--primary-light); padding: 8px 16px; border-radius: 10px; transition: 0.3s;
+}
+.change-photo-btn:hover { background: var(--primary); color: white; }
+
+/* Form Grid & Inputs */
+.profil-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
+.profil-form-group { display: block; }
+.profil-form-group label {
+    display: block; margin-bottom: 10px; font-weight: 700; font-size: 11px;
+    color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; text-align: left;
+}
+.profil-form-group label i { margin-right: 4px; }
+.profil-form-group input {
+    width: 100%; padding: 14px 18px; border: 1px solid var(--border-color);
+    border-radius: 12px; font-size: 14px; outline: none; background: #F8FAFC; transition: 0.3s;
+}
+.profil-form-group input:focus { border-color: var(--primary); background: white; box-shadow: 0 0 0 4px rgba(79,70,229,0.1); }
+.profil-form-group input:disabled { cursor: not-allowed; opacity: 0.7; }
+
+/* Footer & Simpan Button */
+.profil-form-footer { margin-top: 40px; padding-top: 25px; border-top: 1px solid var(--border-color); display: flex; justify-content: flex-end; }
+.btn-save {
+    background: var(--primary); color: white; border: none;
+    padding: 16px 32px; border-radius: 14px; font-weight: 800; cursor: pointer;
+    transition: 0.3s; display: inline-flex; align-items: center; gap: 10px;
+}
+.btn-save:hover { background: var(--primary-hover); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(79,70,229,0.3); }
+
+/* Alerts Profil */
+.alert-profil {
+    background: #DCFCE7; color: #166534; padding: 15px; border-radius: 12px;
+    text-align: center; margin-bottom: 25px; font-weight: 600; border: 1px solid #BBF7D0;
+}
+.alert-danger-custom {
+    background: #FEE2E2; color: #991B1B; border-color: #FECACA;
+}
